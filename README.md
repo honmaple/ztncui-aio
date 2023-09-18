@@ -29,9 +29,10 @@ docker run -d --name ztncui --restart always \
 -e HTTP_ALL_INTERFACES=yes \
 -e ZT_ADDR={zerotier地址, 比如Docker网关:9993} \
 -e ZT_TOKEN={可以为空，但需要挂载zerotier-one的配置路径} \
--v `pwd`/ztncui:/opt/ztncui/etc
+-v `pwd`/ztncui:/opt/ztncui/etc \
 -v `pwd`/zerotier:/var/lib/zerotier-one \
--p 4000:4000
+-p 4000:4000 \
+ztncui
 ```
 
 **ZT_ADDR**: 由于zerotier和UI没有部署在一个容器, 所以需要从UI内部访问宿主机的 **9993** 端口, 这里可以使用UI容器的网关访问, 比如UI容器的IP是 **172.17.0.12**, 则访问 **172.17.0.1**
