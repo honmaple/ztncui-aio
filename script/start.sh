@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 ENV_FILE=/opt/ztncui/.env
 
@@ -39,7 +39,7 @@ if [ -z $ZT_TOKEN ];then
 fi
 
 echo "ZT_ADDR=$ZT_ADDR" >> $ENV_FILE
-echo "ZT_TOKEN=$ZT_TOKEN">> /app/ztncui/src/.env
+echo "ZT_TOKEN=$ZT_TOKEN" >> $ENV_FILE
 
 echo "ZTNCUI ENV CONFIGURATION: "
 cat $ENV_FILE

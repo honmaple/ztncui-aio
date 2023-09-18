@@ -1,6 +1,14 @@
-#!/bin/bash
+#!/bin/sh
 
 set -x
+
+MYADDR=$1
+
+if [ -z $MYADDR ];then
+    echo "IP is null"
+    exit 1
+fi
+
 chmod 777 /tmp/mkmoonworld-x86_64
 zerotier-idtool initmoon /var/lib/zerotier-one/identity.public > moon.json
 chmod 777 moon.json
