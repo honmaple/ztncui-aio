@@ -1,0 +1,3 @@
+[submodule "ztncui"]
+	path = ztncui
+	url = https://github.com/key-networks/ztncui
